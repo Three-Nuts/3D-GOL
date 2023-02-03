@@ -1,0 +1,18 @@
+[
+ {
+  "directory": "/Users/al7aro/Documents/OpenGL/3D-GOL",
+  "arguments": [
+   "c++",
+   "-Iinclude",
+   "-std=c++98",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "src/main.o"
+  ],
+  "file": "src/main.cpp"
+ }
+]
