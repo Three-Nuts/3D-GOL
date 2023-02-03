@@ -15,7 +15,26 @@ OBJ		=	$(SRC:.cpp=.o)
 CC			=	c++
 H_FLAGS		=	-I$(H_DIR)
 C_FLAGS		=	-std=c++98 -Wall -Wextra -Werror
+
+######################################################
+#                       DARWIN                       #
+######################################################
+ifeq ($(shell uname -s), Darwin)
+LIB_FLAGS	=	-framework OpenGL \
+				-L/opt/homebrew/Cellar/glew/2.2.0_1/lib/ \
+				-lGLEW \
+				-L/opt/homebrew/Cellar/glfw/3.3.8/lib/ \
+				-lglfw
+H_FLAGS		+=	-I/opt/homebrew/Cellar/glew/2.2.0_1/include/ \
+				-I/opt/homebrew/Cellar/glfw/3.3.8/include/
+endif
+######################################################
+#                       LINUX                        #
+######################################################
+ifeq ($(shell uname -s), Linux)
 LIB_FLAGS	=
+H_FLAGS		=
+endif
 
 #----- IMPICIT RULES -----
 $(addprefix $(SRC_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.cpp) $(H)
