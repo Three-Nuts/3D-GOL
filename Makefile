@@ -32,8 +32,8 @@ endif
 #                       LINUX                        #
 ######################################################
 ifeq ($(shell uname -s), Linux)
-LIB_FLAGS	=
-H_FLAGS		=
+LIB_FLAGS	=+
+H_FLAGS		=+
 endif
 
 #----- IMPICIT RULES -----
